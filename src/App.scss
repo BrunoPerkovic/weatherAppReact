@@ -1,3 +1,6 @@
+@import "./overwrites";
+@import url("https://fonts.google.com/specimen/Alegreya+Sans");
+
 * {
   padding: 0;
   border: 0;
@@ -6,7 +9,6 @@
 }
 
 .App {
+  font-family: "Alegreya Sans", sans-serif;
   height: 100vh;
-  background-image: linear-gradient(#e75481, #929cde);
-  background-size: cover;
 }
