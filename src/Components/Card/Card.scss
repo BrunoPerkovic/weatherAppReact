@@ -1,6 +1,38 @@
-.card {
-  height: 40%;
-  width: 80%;
-  background-color: aqua;
-  margin: 0 auto;
+.weather {
+  background-color: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &__location {
+    display: flex;
+    justify-content: flex-start;
+    background-color: lightblue;
+  }
+  .weatherInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: navy;
+    &__temperature {
+      background-color: coral;
+      font-size: 64px;
+    }
+    &__windAndCloud {
+      background-color: yellow;
+      &--wind {
+        background-color: #d4426e8c;
+      }
+      &--cloud {
+        background-color: pink;
+      }
+    }
+  }
+  &__timeAndDate {
+    background-color: rebeccapurple;
+  }
+  &__viewStatsButton {
+    background-color: red;
+  }
 }

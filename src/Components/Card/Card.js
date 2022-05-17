@@ -9,22 +9,27 @@ import "./Card.scss";
   timeAndDate,
 }) => {
   return (
-    <div className="Card">
+    <div className="weather">
       {/*       <WeatherIcon weatherIcon="https://cdn-icons-png.flaticon.com/512/2570/2570483.png" />
        */}{" "}
-      <div className="weatherLocation">{location}</div>
-      <div className="weatherTemperatureInformation">
-        <div className="weatherTemperature"> {currentTemperature} </div>
-
-        <div className="weatherInformationContainer">
-          <div className="windInformation">{currentWinds} </div>
-          <div className="cloudInformation">{currentClouds} </div>
+      <div className="weather__location">{location}</div>
+      <div className="weatherInformation">
+        <div className="weatherInformation__temperature">
+          {" "}
+          {currentTemperature}{" "}
+        </div>
+        <div className="weatherInformation__windAndCloud">
+          <div className="weatherInformation__windAndCloud--wind">
+            {currentWinds}{" "}
+          </div>
+          <div className="weatherInformation__windAndCloud--cloud">
+            {currentClouds}{" "}
+          </div>
         </div>
       </div>
-      <div className="dateAndTime">{timeAndDate} </div>
-      <div className="viewWeatherStatsButton"></div>
+      <div className="weather__timeAndDate">{timeAndDate} </div>
+      <div className="weather__viewStatsButton">asdgasg</div>
     </div>
   );
 };
-
 export default Card;
