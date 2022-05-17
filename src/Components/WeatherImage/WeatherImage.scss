@@ -41,6 +41,19 @@
 
     &__item {
       display: flex;
+      border-radius: 20px;
+      padding: 8px;
+      &--red {
+        background-color: lightblue;
+      }
+
+      &--blue {
+        background-color: coral;
+      }
+
+      &--yellow {
+        background-color: yellow;
+      }
     }
     // &__rainChance {
     //   color: blue;
