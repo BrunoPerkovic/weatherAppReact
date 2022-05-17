@@ -6,7 +6,7 @@ import "./Card.scss";
   currentTemperature,
   currentWinds,
   currentClouds,
-  timeAndDate,
+  timeAndDay,
 }) => {
   return (
     <div className="weather">
@@ -27,7 +27,7 @@ import "./Card.scss";
           </div>
         </div>
       </div>
-      <div className="weather__timeAndDate">{timeAndDate} </div>
+      <div className="weather__timeAndDay">{timeAndDay} </div>
       <div className="weather__viewStatsButton">asdgasg</div>
     </div>
   );

@@ -11,35 +11,35 @@ const cities = [
     currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11AM",
   },
   {
     location: "Šibenik, Croatia",
     currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11AM",
   },
   {
     location: "Zagreb, Croatia",
     currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11AM",
   },
   {
     location: "Zadar, Croatia",
     currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11AM",
   },
   {
     location: "Osijek, Croatia",
     currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11AM",
   },
 ];
 
@@ -62,7 +62,7 @@ const NasSwiper = () => {
                 currentTemperature,
                 currentWinds,
                 currentClouds,
-                timeAndDate,
+                timeAndDay,
               },
               i
             ) => (
@@ -73,7 +73,7 @@ const NasSwiper = () => {
                     currentTemperature,
                     currentWinds,
                     currentClouds,
-                    timeAndDate,
+                    timeAndDay,
                   }}
                 />
                 {/* <Card {...city} /> */}
