@@ -17,9 +17,19 @@
     flex-direction: column-reverse;
     font-size: 12px;
     align-items: center;
+    text-decoration: none;
+
+    span {
+      display: none;
+    }
 
     &--active {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
       color: #d86191;
+      text-decoration: none;
+      font-size: 12px;
 
       * {
         fill: #d86191;
