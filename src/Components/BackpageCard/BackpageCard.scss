@@ -1,0 +1,42 @@
+.backpageCards {
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    height: 100px;
+    
+    
+    
+    
+    &__info {
+        background-color: white;
+        border-radius: 30px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: -5px 3px  #888888;
+    }
+
+    &__temp {
+        position: relative;
+        bottom: 15px;
+    }
+
+   &__icons {
+       position: relative;
+       bottom: 30px;
+       img {
+           width: 50px;
+           height: 50px;
+          
+           
+       }
+    
+    
+
+   }
+}
