@@ -13,11 +13,13 @@ import "./Card.scss";
       {/*       <WeatherIcon weatherIcon="https://cdn-icons-png.flaticon.com/512/2570/2570483.png" />
        */}{" "}
       <div className="weather__location">{location}</div>
+
       <div className="weatherInformation">
         <div className="weatherInformation__temperature">
           {" "}
           {currentTemperature}{" "}
         </div>
+
         <div className="weatherInformation__windAndCloud">
           <div className="weatherInformation__windAndCloud--wind">
             {currentWinds}{" "}
@@ -27,6 +29,7 @@ import "./Card.scss";
           </div>
         </div>
       </div>
+
       <div className="weather__timeAndDate">{timeAndDate} </div>
       <div className="weather__viewStatsButton">asdgasg</div>
     </div>

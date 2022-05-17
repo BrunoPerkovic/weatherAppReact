@@ -37,32 +37,53 @@
     img {
       width: 25px;
       height: 25px;
+    }
 
-      &__rainChance {
-        color: blue;
-        background-color: lightblue;
-        border-radius: 13px;
-        height: 29px;
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 8px;
+
+      &--red {
+        background-color: red;
       }
 
-      &__humidityPercentage {
-        color: red;
-        background-color: lightcoral;
-        border-radius: 13px;
-        height: 29px;
-        display: flex;
-        font-size: large;
+      &--blue {
+        background-color: blue;
       }
 
-      &__windSpeed {
-        color: darkorchid;
-        background-color: lightpink;
-        border-radius: 13px;
-        height: 29px;
-        display: flex;
-        text-align: center;
-        font-size: large;
+      &--yellow {
+        background-color: yellow;
       }
     }
+
+    // &__rainChance {
+    //   color: blue;
+    //   background-color: lightblue;
+    //   border-radius: 13px;
+    //   height: 29px;
+    // }
+
+    // &__humidityPercentage {
+    //   color: red;
+    //   background-color: lightcoral;
+    //   border-radius: 13px;
+    //   height: 29px;
+    //   display: flex;
+    //   font-size: large;
+    // }
+
+    // &__windSpeed {
+    //   color: darkorchid;
+    //   background-color: lightpink;
+    //   border-radius: 13px;
+    //   height: 29px;
+    //   display: flex;
+    //   text-align: center;
+    //   font-size: large;
+    // }
   }
 }

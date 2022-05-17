@@ -12,7 +12,8 @@ const WeatherImage = ({
   return (
     <div className="weatherImage">
       <div className="details">
-        <div className="details__left">
+        <div>
+
           <div className="details__cityName">
             Šibenik,
             <br /> Croatia {location}
@@ -20,6 +21,7 @@ const WeatherImage = ({
 
           <div className="details__temperature">15°C {temperature}</div>
         </div>
+
         <div className="details__weatherIcon">
           <img
             src="https://cdn-icons-png.flaticon.com/512/172/172928.png"
@@ -30,7 +32,7 @@ const WeatherImage = ({
       </div>
 
       <div className="infoIcons">
-        <p className="infoIcons__rainChance">
+        <p className="infoIcons__item infoIcons__item--red">
           <img
             src="https://cdn-icons-png.flaticon.com/512/3313/3313888.png"
             alt="rain"
@@ -38,7 +40,7 @@ const WeatherImage = ({
           10% {rainChance}
         </p>
 
-        <p className="infoIcons__humidityPercentage">
+        <p className="infoIcons__item infoIcons__item--blue">
           <img
             src="https://cdn-icons-png.flaticon.com/512/1843/1843544.png"
             alt=""
@@ -46,7 +48,7 @@ const WeatherImage = ({
           25%{humidityPercentage}
         </p>
 
-        <p className="infoIcons__windSpeed">
+        <p className="infoIcons__item infoIcons__item--yellow">
           <img
             src="https://cdn-icons-png.flaticon.com/512/959/959711.png"
             alt=""
