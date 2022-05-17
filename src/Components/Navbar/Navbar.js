@@ -8,9 +8,9 @@ import { ReactComponent as ProfileIcon } from "./navbar-icons/user.svg";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <a className="navbar__item ">
+      <a className="navbar__item navbar--active">
         <span>Home</span>
-        <HomeIcon className="navbar__item--icon  navbar_item--active" />
+        <HomeIcon className="navbar__item--icon  navbar__item--active" />
       </a>
 
       <a className="navbar__item">

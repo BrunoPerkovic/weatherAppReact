@@ -12,15 +12,17 @@
   bottom: 5%;
   left: 10%;
 
+  &--active {
+    color: #d86191;
+    fill: #d86191;
+  }
+
+  
   &__item {
     display: flex;
     flex-direction: column-reverse;
     font-size: 12px;
     align-items: center;
-
-    &--active {
-      color: #d86191;
-    }
 
     &--icon {
       height: 20px;
