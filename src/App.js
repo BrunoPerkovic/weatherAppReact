@@ -1,15 +1,15 @@
-import "./App.scss";
-import "./Components/Settings/Settings";
-import Settings from "./Components/Settings/Settings";
-import Navbar from "./Components/Navbar/Navbar";
-import NasSwiper from "./Components/Swiper/NasSwiper";
+import "../src/App.scss";
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import Overview from "./Pages/Overview";
+import DetailWeather from "./Pages/DetailWeather";
 
 function App() {
   return (
     <div className="App">
-      <Settings />
-      <NasSwiper />
-      <Navbar />
+      <Routes>
+        <Route path="/" element={<Overview />} />
+        <Route path="/details" element={<DetailWeather />} />
+      </Routes>
     </div>
   );
 }
