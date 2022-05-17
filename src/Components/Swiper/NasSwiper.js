@@ -6,6 +6,9 @@ import Card from "../Card/Card";
 import ViewStats from "../ViewStats/ViewStats";
 import { useMediaQuery } from "react-responsive";
 import "./NasSwiper.scss";
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
+import sunny from "../WeatherIcon/sunny.png";
+
 const cities = [
   {
     location: "Split, Croatia",
@@ -73,6 +76,7 @@ const NasSwiper = () => {
               i
             ) => (
               <SwiperSlide key={location}>
+                <WeatherIcon weatherIcon={sunny} />
                 <Card
                   {...{
                     location,
