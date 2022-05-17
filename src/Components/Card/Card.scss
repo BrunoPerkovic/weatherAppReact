@@ -9,6 +9,7 @@
   border-radius: 30px;
   overflow: visible;
   transform: translateX(-10%);
+  font-size: 0.8rem;
 
   &__location {
     font-size: 20px;
@@ -24,7 +25,7 @@
   &__temperature {
     font-size: 64px;
     font-weight: bold;
-    margin-right: 70%;
+    margin-right: 60%;
   }
   &__windAndCloud {
     display: flex;
