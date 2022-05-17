@@ -87,7 +87,11 @@ const NasSwiper = () => {
                   }}
                 />
                 <ViewStats />
-                <Conditions />
+                <Conditions
+                  precipitationPercentage="10%"
+                  windSpeed="5km/h"
+                  humidityPercentage="50%"
+                />
               </SwiperSlide>
             )
           )}
