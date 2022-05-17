@@ -22,7 +22,6 @@ import "./Card.scss";
         </div>
       </div>
       <div className="weather__timeAndDay">{timeAndDay} </div>
-      <div className="weather__viewStatsButton">asdgasg</div>
     </div>
   );
 };
