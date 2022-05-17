@@ -11,4 +11,10 @@
 .App {
   font-family: "Alegreya Sans", sans-serif;
   height: 100vh;
+  background-image: linear-gradient(#e75481, #929cde);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 }

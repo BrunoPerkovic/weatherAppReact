@@ -4,9 +4,10 @@ import "./Card.scss";
  */ const Card = ({
   location,
   currentTemperature,
+  celsisus,
   currentWinds,
   currentClouds,
-  timeAndDate,
+  timeAndDay,
 }) => {
   return (
     <div className="weather">

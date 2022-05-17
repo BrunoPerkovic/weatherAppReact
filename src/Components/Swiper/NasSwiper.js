@@ -5,53 +5,61 @@ import "swiper/css";
  */ import Card from "../Card/Card";
 /* import ViewStats from "../ViewStats/ViewStats";
  */
+import { useMediaQuery } from "react-responsive";
+
+import "./NasSwiper.scss";
 const cities = [
   {
     location: "Split, Croatia",
-    currentTemperature: "21°C",
+    currentTemperature: "21",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11am",
   },
   {
     location: "Šibenik, Croatia",
-    currentTemperature: "21°C",
+    currentTemperature: "21",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11am",
   },
   {
     location: "Zagreb, Croatia",
-    currentTemperature: "21°C",
+    currentTemperature: "21",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11am",
   },
   {
     location: "Zadar, Croatia",
-    currentTemperature: "21°C",
+    currentTemperature: "21",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11am",
   },
   {
     location: "Osijek, Croatia",
-    currentTemperature: "21°C",
+    currentTemperature: "21",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
-    timeAndDate: "Friday, 11AM",
+    timeAndDay: "Friday, 11am",
   },
 ];
 
 const NasSwiper = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+
   return (
     <div className="Swiper">
       <Swiper
-        slidesPerView={3}
+        slidesPerView={isDesktopOrLaptop ? 6 : 2}
         centeredSlides={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         loop={true}
+        rebuildOnUpdate={true}
       >
         {cities
           .filter((city) => city.location !== "Zagreb, Croatia")
@@ -62,7 +70,7 @@ const NasSwiper = () => {
                 currentTemperature,
                 currentWinds,
                 currentClouds,
-                timeAndDate,
+                timeAndDay,
               },
               i
             ) => (
@@ -73,7 +81,7 @@ const NasSwiper = () => {
                     currentTemperature,
                     currentWinds,
                     currentClouds,
-                    timeAndDate,
+                    timeAndDay,
                   }}
                 />
                 {/* <Card {...city} /> */}

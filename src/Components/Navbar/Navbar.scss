@@ -7,11 +7,20 @@
   width: 80%;
   height: 10%;
   background-color: #fff;
-  margin: 0 auto;
   border-radius: 20px;
-  position: relative;
-  top: 80%;
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
+
   &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 12px;
+
+    &--active {
+      color: #d86191;
+    }
+
     &--icon {
       height: 20px;
       width: 20px;

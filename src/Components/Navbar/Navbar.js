@@ -8,19 +8,23 @@ import { ReactComponent as ProfileIcon } from "./navbar-icons/user.svg";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <a className="navbar__item">
-        <HomeIcon className="navbar__item--icon" />
+      <a className="navbar__item ">
+        <span>Home</span>
+        <HomeIcon className="navbar__item--icon  navbar_item--active" />
       </a>
 
       <a className="navbar__item">
+        <span>Search</span>
         <SearchIcon className="navbar__item--icon" />
       </a>
 
       <a className="navbar__item">
+        <span>Bookmark</span>
         <BookmarkIcon className="navbar__item--icon" />
       </a>
 
       <a className="navbar__item">
+        <span>Profile</span>
         <ProfileIcon className="navbar__item--icon" />
       </a>
     </div>
