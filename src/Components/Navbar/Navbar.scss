@@ -12,21 +12,22 @@
   bottom: 5%;
   left: 10%;
 
-  &--active {
-    color: #d86191;
-    fill: #d86191;
-  }
-
-  
   &__item {
     display: flex;
     flex-direction: column-reverse;
     font-size: 12px;
     align-items: center;
 
-    &--icon {
-      height: 20px;
-      width: 20px;
+    &--active {
+      color: #d86191;
+
+      * {
+        fill: #d86191;
+      }
     }
+  }
+  &__icon {
+    height: 20px;
+    width: 20px;
   }
 }
