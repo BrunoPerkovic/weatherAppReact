@@ -83,6 +83,7 @@ const NasSwiper = () => {
                   }}
                 />
                 <ViewStats />
+                <Conditions />
               </SwiperSlide>
             )
           )}
