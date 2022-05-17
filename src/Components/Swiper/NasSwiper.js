@@ -1,12 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-/* import Conditions from "../Conditions/Conditions";
- */ import Card from "../Card/Card";
-/* import ViewStats from "../ViewStats/ViewStats";
- */
+import Conditions from "../Conditions/Conditions";
+import Card from "../Card/Card";
+import ViewStats from "../ViewStats/ViewStats";
 import { useMediaQuery } from "react-responsive";
-
 import "./NasSwiper.scss";
 const cities = [
   {
@@ -18,28 +16,28 @@ const cities = [
   },
   {
     location: "Šibenik, Croatia",
-    currentTemperature: "21",
+    currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
     timeAndDay: "Friday, 11am",
   },
   {
     location: "Zagreb, Croatia",
-    currentTemperature: "21",
+    currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
     timeAndDay: "Friday, 11am",
   },
   {
     location: "Zadar, Croatia",
-    currentTemperature: "21",
+    currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
     timeAndDay: "Friday, 11am",
   },
   {
     location: "Osijek, Croatia",
-    currentTemperature: "21",
+    currentTemperature: "21°C",
     currentWinds: "Light Breeze",
     currentClouds: "Clear Sky",
     timeAndDay: "Friday, 11am",
@@ -84,9 +82,7 @@ const NasSwiper = () => {
                     timeAndDay,
                   }}
                 />
-                {/* <Card {...city} /> */}
-                {/* <ViewStats />
-                <Conditions /> */}
+                <ViewStats />
               </SwiperSlide>
             )
           )}
