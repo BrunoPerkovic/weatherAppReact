@@ -1,37 +1,30 @@
-.forecast{
-    margin-top: 30px;
-    &__row{
+.forecast {
+  margin-top: 30px;
+  &__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+  }
+  &__days {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+    width: 170px;
+  }
+
+  &__icons {
+    flex-grow: 1;
+    img {
+      height: 20px;
+      width: 20px;
     }
-    &__days{
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        margin-left: 10px;
-        margin-bottom: 20px;
-        
-        width: 170px;
-        
-        }
+  }
 
-        &__icons {
-            flex-grow: 1;
-            img{
-                height: 20px;
-                width: 20px;
-                
-                
-            }
-            
-        }
-
-        &__temps {
-            margin-left: auto;
-            margin-right: 10px;
-        }
-    
-    
+  &__temps {
+    margin-left: auto;
+    margin-right: 10px;
+  }
 }

@@ -41,25 +41,7 @@
 
     &__item {
       display: flex;
-      align-items: center;
-      gap: 5px;
-      background-color: white;
-      border-radius: 20px;
-      padding: 8px;
-
-      &--red {
-        background-color: red;
-      }
-
-      &--blue {
-        background-color: blue;
-      }
-
-      &--yellow {
-        background-color: yellow;
-      }
     }
-
     // &__rainChance {
     //   color: blue;
     //   background-color: lightblue;
