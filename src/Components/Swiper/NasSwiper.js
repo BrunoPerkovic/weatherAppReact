@@ -10,7 +10,7 @@ import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import sunny from "../WeatherIcon/sunny.png";
 import axios from "axios";
 
-const initialValues = [
+const initialCityData = [
   {
     location: "Split, Croatia",
     lon: 16.440193,
@@ -23,33 +23,29 @@ const initialValues = [
   },
   {
     location: "Zagreb, Croatia",
-    lon: 15.8942,
-    lat: 43.7343,
+    lon: 15.966568,
+    lat: 45.815399,
   },
   {
     location: "Zadar, Croatia",
-    lon: 15.8942,
-    lat: 43.7343,
+    lon: 15.24222,
+    lat: 44.11972,
   },
   {
     location: "Osijek, Croatia",
-    lon: 15.8942,
-    lat: 43.7343,
+    lon: 18.6744173023,
+    lat: 45.5545161153,
   },
 ];
 
 const NasSwiper = () => {
-  const [weather, setWeather] = useState("");
-
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
-    // const citiesCopy = [...cities];
-
     Promise.all(
-      initialValues.map((city) =>
+      initialCityData.map((city) =>
         axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=b734bae5a310113c213110ccdbf8a446`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=3b73ba60020b3ca9b6ba259cf70a6931`
         )
       )
     ).then((values) => {
@@ -58,25 +54,19 @@ const NasSwiper = () => {
         values.map((value) => {
           return {
             location: value.data.name,
+            currentTemperature: value.data.main.temp,
+            currentWinds: value.data.wind.speed,
+            currentClouds: value.data.weather[0].description,
+            timeAndDay: value.data.dt,
+            windSpeed: value.data.wind.speed,
+            humidityPercentage: value.data.main.humidity,
+            currentPressure: value.data.main.pressure,
           };
         })
       );
     });
-
-    // .then((response) => {
-    //   const updatedCity = {
-    //     ...city,
-    //     currentTemperature: response.data.main.temp,
-    //   };
-
-    //   citiesCopy[i] = updatedCity;
-    //   setCities(citiesCopy);
-    //   i++;
-    //   console.log(i, cities);
-    // });
   }, []);
-  /*   console.log(cities);
-   */
+
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1024px)",
   });
@@ -118,7 +108,7 @@ const NasSwiper = () => {
                 />
                 <ViewStats />
                 <Conditions
-                  precipitationPercentage="10%"
+                  currentPressure="1020"
                   windSpeed="5km/h"
                   humidityPercentage="50%"
                 />
