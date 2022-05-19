@@ -1,0 +1,30 @@
+{
+  "coord": { "lon": 15.8942, "lat": 43.7343 },
+  "weather": [
+    { "id": 800, "main": "Clear", "description": "clear sky", "icon": "01d" }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 296.29,
+    "feels_like": 295.18,
+    "temp_min": 296.29,
+    "temp_max": 297.1,
+    "pressure": 1026,
+    "humidity": 20
+  },
+  "visibility": 10000,
+  "wind": { "speed": 2.68, "deg": 253, "gust": 4.47 },
+  "clouds": { "all": 0 },
+  "dt": 1652952491,
+  "sys": {
+    "type": 2,
+    "id": 2005105,
+    "country": "HR",
+    "sunrise": 1652930846,
+    "sunset": 1652984316
+  },
+  "timezone": 7200,
+  "id": 3190941,
+  "name": "Šibenik",
+  "cod": 200
+}
