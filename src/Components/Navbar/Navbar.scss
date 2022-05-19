@@ -18,6 +18,7 @@
     font-size: 12px;
     align-items: center;
     text-decoration: none;
+    background: transparent;
 
     span {
       display: none;
@@ -34,9 +35,13 @@
       * {
         fill: #d86191;
       }
+
+      span {
+        display: block;
+      }
     }
   }
-  &__icon {
+  svg {
     height: 20px;
     width: 20px;
   }

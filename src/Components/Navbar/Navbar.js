@@ -7,33 +7,32 @@ import { ReactComponent as BookmarkIcon } from "./navbar-icons/bookmark-white.sv
 import { ReactComponent as ProfileIcon } from "./navbar-icons/user.svg";
 
 const Navbar = () => {
-  const [activeIcon, setActiveIcon] = useState("navbar__item");
+  const [activeIcon, setActiveIcon] = useState("Home");
 
-  const handleActiveIcon = () => {
-    setActiveIcon("navbar__item--active");
-  };
+  const navItems = [
+    { label: "Home", icon: <HomeIcon /> },
+    { label: "Search", icon: <SearchIcon /> },
+    { label: "Bookmark", icon: <BookmarkIcon /> },
+    { label: "Profile", icon: <ProfileIcon /> },
+  ];
 
   return (
     <div className="navbar">
-      <a className={activeIcon} onClick={handleActiveIcon} href="#">
-        <span>Home</span>
-        <HomeIcon className="navbar__icon " />
-      </a>
-
-      <a className={activeIcon} onClick={handleActiveIcon} href="#">
-        <span>Search</span>
-        <SearchIcon className="navbar__icon" />
-      </a>
-
-      <a className={activeIcon} onClick={handleActiveIcon} href="#">
-        <span>Bookmark</span>
-        <BookmarkIcon className="navbar__icon" />
-      </a>
-
-      <a className={activeIcon} onClick={handleActiveIcon} href="#">
-        <span>Profile</span>
-        <ProfileIcon className="navbar__icon" />
-      </a>
+      {navItems.map((navItem) => {
+        return (
+          <button
+            className={`navbar__item ${
+              activeIcon === navItem.label ? "navbar__item--active" : ""
+            }`}
+            onClick={() => {
+              setActiveIcon(navItem.label);
+            }}
+          >
+            <span>{navItem.label}</span>
+            {navItem.icon}
+          </button>
+        );
+      })}
     </div>
   );
 };

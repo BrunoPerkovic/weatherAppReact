@@ -15,7 +15,7 @@ import "./Card.scss";
        */}{" "}
       <div className="weather__location">{location}</div>
       <div className="weather__information">
-        <div className="weather__temperature"> {currentTemperature} </div>
+        <div className="weather__temperature"> {currentTemperature}°C </div>
         <div className="weather__windAndCloud">
           <p className="weather__windAndCloud--wind">{currentWinds} km/h </p>
           <p className="weather__windAndCloud--cloud">{currentClouds} </p>

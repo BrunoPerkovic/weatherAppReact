@@ -9,6 +9,7 @@ import "./NasSwiper.scss";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import sunny from "../WeatherIcon/sunny.png";
 import axios from "axios";
+const dayNames = ["Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub"];
 
 const initialCityData = [
   {
@@ -36,7 +37,14 @@ const initialCityData = [
     lon: 18.6744173023,
     lat: 45.5545161153,
   },
+  {
+    location: "Shanghai, China",
+    lon: 121.469179,
+    lat: 31.224361,
+  },
 ];
+
+
 
 const NasSwiper = () => {
   const [cities, setCities] = useState([]);
@@ -52,12 +60,16 @@ const NasSwiper = () => {
       console.log(values);
       setCities(
         values.map((value) => {
+          const date = new Date(value.data.dt * 1000);
+          const day = dayNames[date.getDay()];
+          const hours = date.getHours();
+
           return {
             location: value.data.name,
-            currentTemperature: value.data.main.temp,
+            currentTemperature: value.data.main.temp.toFixed(),
             currentWinds: value.data.wind.speed,
             currentClouds: value.data.weather[0].description,
-            timeAndDay: value.data.dt,
+            timeAndDay: `${day}, ${hours}sati`,
             windSpeed: value.data.wind.speed,
             humidityPercentage: value.data.main.humidity,
             currentPressure: value.data.main.pressure,

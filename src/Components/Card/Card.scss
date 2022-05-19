@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #fbfbfb;
   height: 250px;
   width: 120%;
@@ -10,22 +9,21 @@
   overflow: visible;
   transform: translateX(-10%);
   font-size: 0.8rem;
+  padding: 10px;
 
   &__location {
     font-size: 20px;
     font-weight: bold;
     margin-right: auto;
-    padding: 5px;
   }
   &__information {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   &__temperature {
     font-size: 50px;
     font-weight: bold;
-    margin-right: 20%;
   }
   &__windAndCloud {
     display: flex;
@@ -53,7 +51,6 @@
 
   &__timeAndDay {
     margin-right: auto;
-    padding: 5px;
     color: #332821;
     opacity: 50%;
   }
