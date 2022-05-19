@@ -8,9 +8,6 @@ import { useEffect, useState } from "react";
 function App() {
   return (
     <div className="App">
-      <div>
-        <button></button>
-      </div>
       <Routes>
         <Route path="/" element={<Overview />} />
         <Route path="/details" element={<DetailWeather />} />
