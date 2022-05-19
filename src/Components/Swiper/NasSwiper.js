@@ -92,6 +92,9 @@ const NasSwiper = () => {
                 currentWinds,
                 currentClouds,
                 timeAndDay,
+                currentPressure,
+                windSpeed,
+                humidityPercentage,
               },
               i
             ) => (
@@ -108,9 +111,7 @@ const NasSwiper = () => {
                 />
                 <ViewStats />
                 <Conditions
-                  currentPressure="1020"
-                  windSpeed="5km/h"
-                  humidityPercentage="50%"
+                  {...{ currentPressure, windSpeed, humidityPercentage }}
                 />
               </SwiperSlide>
             )

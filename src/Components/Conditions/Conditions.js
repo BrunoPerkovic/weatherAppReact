@@ -14,7 +14,7 @@ const Conditions = ({ currentPressure, humidityPercentage, windSpeed }) => {
         <div className="conditions__text">Pressure</div>
         <div className="conditions__percentage">
           <p className="conditionsPercentagePrecipitation">
-            {currentPressure}{" "}
+            {currentPressure} hPa
           </p>
         </div>
       </div>
@@ -28,7 +28,7 @@ const Conditions = ({ currentPressure, humidityPercentage, windSpeed }) => {
 
         <div className="conditions__text">Humidity</div>
         <div className="conditions__percentage">
-          <p className="conditionsPercentageHumidity">{humidityPercentage}</p>
+          <p className="conditionsPercentageHumidity">{humidityPercentage}%</p>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ const Conditions = ({ currentPressure, humidityPercentage, windSpeed }) => {
 
         <div className="conditions__text">Wind</div>
         <div className="conditions__percentage">
-          <p className="conditionsPercentageWind">{windSpeed} </p>
+          <p className="conditionsPercentageWind">{windSpeed} km/h </p>
         </div>
       </div>
     </div>
