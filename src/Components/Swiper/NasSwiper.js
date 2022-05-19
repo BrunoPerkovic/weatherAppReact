@@ -54,7 +54,7 @@ const NasSwiper = () => {
         values.map((value) => {
           return {
             location: value.data.name,
-            currentTemperature: value.data.main.temp,
+            currentTemperature: value.data.main.temp.toFixed(),
             currentWinds: value.data.wind.speed,
             currentClouds: value.data.weather[0].description,
             timeAndDay: value.data.dt,
