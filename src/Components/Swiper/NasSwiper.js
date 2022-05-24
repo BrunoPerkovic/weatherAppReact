@@ -8,8 +8,20 @@ import { useMediaQuery } from "react-responsive";
 import "./NasSwiper.scss";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import sunny from "../WeatherIcon/sunny.png";
+import cloudy from "../WeatherIcon/cloudy.png";
+import overheat from "../WeatherIcon/overheat.png";
 import axios from "axios";
 const dayNames = ["Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub"];
+
+function setWeatherIcons(value) {
+  if (value === "clear sky") {
+    return <WeatherIcon weatherIcon={sunny} />;
+  } else if (value === "broken clouds") {
+    return <WeatherIcon weatherIcon={cloudy} />;
+  } else if (value === "overcast clouds") {
+    return <WeatherIcon weatherIcon={overheat} />;
+  }
+}
 
 const initialCityData = [
   {
@@ -43,8 +55,6 @@ const initialCityData = [
     lat: 31.224361,
   },
 ];
-
-
 
 const NasSwiper = () => {
   const [cities, setCities] = useState([]);
@@ -111,7 +121,7 @@ const NasSwiper = () => {
               i
             ) => (
               <SwiperSlide key={location}>
-                <WeatherIcon weatherIcon={sunny} />
+                {setWeatherIcons(currentClouds)}
                 <Card
                   {...{
                     location,
