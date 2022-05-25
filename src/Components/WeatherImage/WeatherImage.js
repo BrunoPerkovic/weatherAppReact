@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherImage.scss";
 
 const WeatherImage = ({
   location,
-  temperature,
+  currentTemperature,
   weatherIcon,
   rainChance,
   humidityPercentage,
-  windSpeed,
+  currentWinds,
 }) => {
   return (
     <div className="weatherImage">
       <div className="details">
         <div>
-
           <div className="details__cityName">
             Šibenik,
             <br /> Croatia {location}
           </div>
 
-          <div className="details__temperature">15°C {temperature}</div>
+          <div className="details__temperature">15°C {currentTemperature}</div>
         </div>
 
         <div className="details__weatherIcon">
@@ -37,7 +36,7 @@ const WeatherImage = ({
             src="https://cdn-icons-png.flaticon.com/512/3313/3313888.png"
             alt="rain"
           />{" "}
-          10% {rainChance}
+          {rainChance}
         </p>
 
         <p className="infoIcons__item infoIcons__item--blue">
@@ -45,7 +44,7 @@ const WeatherImage = ({
             src="https://cdn-icons-png.flaticon.com/512/1843/1843544.png"
             alt=""
           />
-          25%{humidityPercentage}
+          {humidityPercentage}
         </p>
 
         <p className="infoIcons__item infoIcons__item--yellow">
@@ -53,7 +52,7 @@ const WeatherImage = ({
             src="https://cdn-icons-png.flaticon.com/512/959/959711.png"
             alt=""
           />{" "}
-          19km/h{windSpeed}
+          {currentWinds}
         </p>
       </div>
     </div>
