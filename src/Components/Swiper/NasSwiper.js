@@ -7,13 +7,33 @@ import ViewStats from "../ViewStats/ViewStats";
 import { useMediaQuery } from "react-responsive";
 import "./NasSwiper.scss";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
-import sunny from "../WeatherIcon/sunny.png";
-import cloudy from "../WeatherIcon/cloudy.png";
-import overheat from "../WeatherIcon/overheat.png";
+
 import axios from "axios";
+
+import brokenClouds from "../WeatherIcon/brokenClouds.png";
+import clearSky from "../WeatherIcon/clearSky.png";
+import dust from "../WeatherIcon/dust.png";
+import fewClouds from "../WeatherIcon/fewClouds.png";
+import fog from "../WeatherIcon/fog.png";
+import haze from "../WeatherIcon/haze.png";
+import heavySnow from "../WeatherIcon/heavySnow.png";
+import lightRainAndSnow from "../WeatherIcon/lightRainAndSnow.png";
+import lightSnow from "../WeatherIcon/lightSnow.png";
+import mist from "../WeatherIcon/mist.png";
+import overcast from "../WeatherIcon/overcast.png";
+import rainAndSnow from "../WeatherIcon/rainAndSnow.png";
+import sand from "../WeatherIcon/sand.png";
+import scatteredClouds from "../WeatherIcon/scatteredClouds.png";
+import showerSnow from "../WeatherIcon/showerSnow.png";
+import sleet from "../WeatherIcon/sleet.png";
+import smoke from "../WeatherIcon/smoke.png";
+import squalls from "../WeatherIcon/squalls.png";
+import tornado from "../WeatherIcon/tornado.png";
+import volcanicAsh from "../WeatherIcon/volcanicAsh.png";
 const dayNames = ["Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub"];
 
-function setWeatherIcons(value) {
+//todo: objekt s key value par {opis1: ikona1, opis2: ikona2,...}
+/* function setWeatherIcons(value) {
   if (value === "clear sky") {
     return <WeatherIcon weatherIcon={sunny} />;
   } else if (value === "broken clouds") {
@@ -21,7 +41,64 @@ function setWeatherIcons(value) {
   } else if (value === "overcast clouds") {
     return <WeatherIcon weatherIcon={overheat} />;
   }
-}
+} */
+
+const weatherObject = {
+  "thunderstorm with rain": "slika",
+  "thunderstorm with heavy rain": "slika",
+  "light thunderstorm": "slika",
+  thunderstorm: "slika",
+  "heavy thunderstorm": "slika",
+  "ragged thunderstorm": "slika",
+  "thunderstorm with light drizzle": "slika",
+  "thunderstorm with drizzle": "slika",
+  "thunderstorm with heavy drizzle": "slika",
+  "light itensity drizzle": "slika",
+  drizzle: "slika",
+  "heavy itensity drizzle": "slika",
+  "light itensity drizzle rain": "slika",
+  "drizzle rain": "slika",
+  "heavy itensity drizzle rain": "slika",
+  "shower rain and drizzle": "slika",
+  "heavy shower rain and drizzle": "slika",
+  "shower drizzle": "slika",
+  "light rain": "slika",
+  "moderate rain": "slika",
+  "heavy itensity rain": "slika",
+  "very heavy rain": "slika",
+  "extreme rain": "slika",
+  "freezing rain": "slika",
+  "light itensity shower rain": "slika",
+  "shower rain": "slika",
+  "heavy itensity shower rain": "slika",
+  "ragged shower rain": "slika",
+  "light snow": lightSnow,
+  Snow: lightSnow,
+  "Heavy snow": heavySnow,
+  Sleet: sleet,
+  "Light shower sleet": "slika",
+  "Shower sleet": "slika",
+  "Light rain and snow": lightRainAndSnow,
+  "Rain and snow": rainAndSnow,
+  "Light shower snow": lightSnow,
+  "Shower snow": showerSnow,
+  "Heavy shower snow": heavySnow,
+  mist: mist,
+  Smoke: smoke,
+  Haze: haze,
+  "sand/ dust whirls": "slika",
+  fog: fog,
+  sand: sand,
+  dust: dust,
+  "volcanic ash": volcanicAsh,
+  squalls: tornado,
+  tornado: tornado,
+  "clear sky": clearSky,
+  "few clouds": fewClouds,
+  "scattered clouds": scatteredClouds,
+  "broken clouds": brokenClouds,
+  "overcast clouds": overcast,
+};
 
 const initialCityData = [
   {
@@ -121,7 +198,8 @@ const NasSwiper = () => {
               i
             ) => (
               <SwiperSlide key={location}>
-                {setWeatherIcons(currentClouds)}
+                {/* {setWeatherIcons(currentClouds)} */}
+                <WeatherIcon weatherIcon={weatherObject[currentClouds]} />
                 <Card
                   {...{
                     location,
