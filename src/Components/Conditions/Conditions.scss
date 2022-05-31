@@ -1,128 +1,29 @@
 .conditions {
-  &__row {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 175px;
-    margin: 0 auto;
-  }
+	&__row {
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 200px;
+		margin: 0 auto;
+		font-size: 16px;
+		> * {
+			padding: 8px 6px;
+		}
+	}
 
-  &__icon {
-    width: 15px;
-    margin-right: 5px;
-    img {
-      height: auto;
-      width: 100%;
-      filter: invert(1);
-    }
-  }
+	&__icon {
+		padding: 0;
+		width: 20px;
+		margin-right: 5px;
+		img {
+			height: auto;
+			width: 100%;
+			filter: invert(1);
+		}
+	}
 
-  &__percentage {
-    margin-left: auto;
-    /*  .conditionsPercentagePrecipitation {
-        margin-left: 20px;
-      }
-  
-      .conditionsPercentageHumidity {
-        margin-left: 45px;
-      }
-  
-      .conditionsPercentageWind {
-        margin-left: 60px;
-      } */
-  }
+	&__percentage {
+		margin-left: auto;
+	}
 }
-
-/* .conditions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    .rainContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-  
-      .rainIcon {
-        height: 24px;
-        width: 24px;
-        img {
-          height: 15px;
-          width: 16px;
-        }
-      }
-  
-      .rainText {
-        color: white;
-        font-size: 18px;
-        font-weight: normal;
-      }
-  
-      .rainPercentage {
-        color: white;
-        font-size: 18px;
-      }
-    }
-  
-    .humidityContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-  
-      .humidityIcon {
-        height: 24px;
-        width: 24px;
-  
-        img {
-          height: 15px;
-          width: 16px;
-        }
-      }
-  
-      .humidityText {
-        color: white;
-        font-size: 18px;
-        font-weight: normal;
-      }
-  
-      .humidityPercentage {
-        color: white;
-        font-size: 18px;
-        font-weight: normal;
-      }
-    }
-  
-    .windContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-  
-      .windIcon {
-        height: 24px;
-        width: 24px;
-  
-        img {
-          height: 15px;
-          width: 16px;
-        }
-      }
-  
-      .windText {
-        color: white;
-        font-size: 18px;
-        font-weight: normal;
-      }
-  
-      .windPercentage {
-        color: white;
-        font-size: 18px;
-        font-weight: normal;
-      }
-    }
-  }
-   */

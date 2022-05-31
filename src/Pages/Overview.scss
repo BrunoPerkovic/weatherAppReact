@@ -1,15 +1,15 @@
 .overview {
-  height: 100%;
-  position: relative;
-  .Swiper {
-    position: relative;
-    top: 25%;
-  }
-
-  .swiper-slide-active {
-    z-index: 10;
-    box-shadow: 5px #888888;
-  }
-  Settings {
-  }
+	height: 100vh;
+	background-image: linear-gradient(#e75481, #929cde);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+	.Swiper {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }
