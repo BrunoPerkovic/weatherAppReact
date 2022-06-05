@@ -5,15 +5,29 @@ import { ReactComponent as HomeIcon } from "./navbar-icons/home.svg";
 import { ReactComponent as SearchIcon } from "./navbar-icons/search.svg";
 import { ReactComponent as BookmarkIcon } from "./navbar-icons/bookmark-white.svg";
 import { ReactComponent as ProfileIcon } from "./navbar-icons/user.svg";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [activeIcon, setActiveIcon] = useState("Home");
+  const navigate = useNavigate();
 
   const navItems = [
-    { label: "Home", icon: <HomeIcon /> },
-    { label: "Search", icon: <SearchIcon /> },
-    { label: "Bookmark", icon: <BookmarkIcon /> },
-    { label: "Profile", icon: <ProfileIcon /> },
+    {
+      label: "Home",
+      icon: <HomeIcon onClick={() => navigate("/")} />,
+    },
+    {
+      label: "Search",
+      icon: <SearchIcon onClick={() => navigate("/Search")} />,
+    },
+    {
+      label: "Bookmark",
+      icon: <BookmarkIcon onClick={() => navigate("/Bookmark")} />,
+    },
+    {
+      label: "Profile",
+      icon: <ProfileIcon onClick={() => navigate("/Profile")} />,
+    },
   ];
 
   return (

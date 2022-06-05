@@ -27,21 +27,20 @@ import scatteredClouds from "../WeatherIcon/scatteredClouds.png";
 import showerSnow from "../WeatherIcon/showerSnow.png";
 import sleet from "../WeatherIcon/sleet.png";
 import smoke from "../WeatherIcon/smoke.png";
-import squalls from "../WeatherIcon/squalls.png";
 import tornado from "../WeatherIcon/tornado.png";
 import volcanicAsh from "../WeatherIcon/volcanicAsh.png";
-const dayNames = ["Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub"];
+import drizzle from "../WeatherIcon/drizzle.png";
+import extremerain from "../WeatherIcon/extremerain.png";
+import freezerain from "../WeatherIcon/freezerain.png";
+import heavyrain from "../WeatherIcon/heavyrain.png";
+import moderaterin from "../WeatherIcon/moderaterin.png";
+import showerrain from "../WeatherIcon/showerrain.png";
+import showersleet from "../WeatherIcon/showersleet.png";
+import thunmoddriz from "../WeatherIcon/thunmoddriz.png";
+import thunlitdriz from "../WeatherIcon/thunlitdriz.png";
+import thunhevdriz from "../WeatherIcon/thunhevdriz.png";
 
-//todo: objekt s key value par {opis1: ikona1, opis2: ikona2,...}
-/* function setWeatherIcons(value) {
-  if (value === "clear sky") {
-    return <WeatherIcon weatherIcon={sunny} />;
-  } else if (value === "broken clouds") {
-    return <WeatherIcon weatherIcon={cloudy} />;
-  } else if (value === "overcast clouds") {
-    return <WeatherIcon weatherIcon={overheat} />;
-  }
-} */
+const dayNames = ["Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub"];
 
 const weatherObject = {
   "thunderstorm with rain": "slika",
@@ -50,11 +49,11 @@ const weatherObject = {
   thunderstorm: "slika",
   "heavy thunderstorm": "slika",
   "ragged thunderstorm": "slika",
-  "thunderstorm with light drizzle": "slika",
-  "thunderstorm with drizzle": "slika",
-  "thunderstorm with heavy drizzle": "slika",
+  "thunderstorm with light drizzle": thunlitdriz,
+  "thunderstorm with drizzle": thunmoddriz,
+  "thunderstorm with heavy drizzle": thunhevdriz,
   "light itensity drizzle": "slika",
-  drizzle: "slika",
+  drizzle: drizzle,
   "heavy itensity drizzle": "slika",
   "light itensity drizzle rain": "slika",
   "drizzle rain": "slika",
@@ -63,21 +62,21 @@ const weatherObject = {
   "heavy shower rain and drizzle": "slika",
   "shower drizzle": "slika",
   "light rain": "slika",
-  "moderate rain": "slika",
-  "heavy itensity rain": "slika",
-  "very heavy rain": "slika",
-  "extreme rain": "slika",
-  "freezing rain": "slika",
-  "light itensity shower rain": "slika",
-  "shower rain": "slika",
-  "heavy itensity shower rain": "slika",
+  "moderate rain": moderaterin,
+  "heavy itensity rain": heavyrain,
+  "very heavy rain": heavyrain,
+  "extreme rain": extremerain,
+  "freezing rain": freezerain,
+  "light itensity shower rain": showerrain,
+  "shower rain": showerrain,
+  "heavy itensity shower rain": showerrain,
   "ragged shower rain": "slika",
   "light snow": lightSnow,
   Snow: lightSnow,
   "Heavy snow": heavySnow,
   Sleet: sleet,
-  "Light shower sleet": "slika",
-  "Shower sleet": "slika",
+  "Light shower sleet": lightRainAndSnow,
+  "Shower sleet": showersleet,
   "Light rain and snow": lightRainAndSnow,
   "Rain and snow": rainAndSnow,
   "Light shower snow": lightSnow,
@@ -92,7 +91,7 @@ const weatherObject = {
   dust: dust,
   "volcanic ash": volcanicAsh,
   squalls: tornado,
-  tornado: tornado,
+  s: tornado,
   "clear sky": clearSky,
   "few clouds": fewClouds,
   "scattered clouds": scatteredClouds,
@@ -156,7 +155,7 @@ const NasSwiper = () => {
             currentTemperature: value.data.main.temp.toFixed(),
             currentWinds: value.data.wind.speed,
             currentClouds: value.data.weather[0].description,
-            timeAndDay: `${day}, ${hours}sati`,
+            timeAndDay: `${day}, ${hours}sati`, //ovo ne radi kako triba, uvik vuce istu uru bez obzira na timezone
             windSpeed: value.data.wind.speed,
             humidityPercentage: value.data.main.humidity,
             currentPressure: value.data.main.pressure,

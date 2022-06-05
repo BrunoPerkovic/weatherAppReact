@@ -11,8 +11,6 @@ import "./Card.scss";
 }) => {
   return (
     <div className="weather">
-      {/*       <WeatherIcon weatherIcon="https://cdn-icons-png.flaticon.com/512/2570/2570483.png" />
-       */}{" "}
       <div className="weather__location">{location}</div>
       <div className="weather__information">
         <div className="weather__temperature"> {currentTemperature}°C </div>
