@@ -1,23 +1,25 @@
 .swiper {
-  overflow: visible !important;
-  &-slide {
-    transition: opacity 1s ease, transform 1s ease;
-    &-active {
-      .Card {
-        box-shadow: 0 0 20px #888;
-      }
+	overflow: visible !important;
+	&-slide {
+		will-change: opacity;
+		transition: opacity 1s ease, transform 1s ease;
+		&-active {
+			z-index: 99;
+			.weatherCard {
+				box-shadow: 0 0 16px #88aa;
+			}
 
-      .conditions {
-        transition: opacity 1s ease, transform 1s ease;
-      }
-    }
+			.conditions {
+				transition: opacity 1s ease, transform 1s ease;
+			}
+		}
 
-    &:not(.swiper-slide-active) {
-      opacity: 0.7;
-      transform: scale(0.8) !important;
-      .conditions {
-        opacity: 0;
-      }
-    }
-  }
+		&:not(.swiper-slide-active) {
+			opacity: 0.7;
+			transform: scale(0.85) !important;
+			.conditions {
+				opacity: 0;
+			}
+		}
+	}
 }
