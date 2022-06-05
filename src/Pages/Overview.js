@@ -5,13 +5,13 @@ import NasNavbar from "../Components/Navbar/Navbar";
 import "./Overview.scss";
 
 const Overview = () => {
-  return (
-    <div className="overview">
-      <Settings />
-      <NasSwiper />
-      <NasNavbar />
-    </div>
-  );
+	return (
+		<div className="overview">
+			<Settings />
+			<NasSwiper />
+			<NasNavbar />
+		</div>
+	);
 };
 
 export default Overview;

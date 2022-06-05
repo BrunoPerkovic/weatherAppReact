@@ -1,84 +1,82 @@
 .weatherImage {
-  display: flex;
-  flex-direction: column;
-  .details {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	.details {
+		display: flex;
+		justify-content: space-between;
 
-    &__cityName {
-      margin-top: 10px;
-      margin-bottom: 30px;
-      margin-left: 15px;
-      font-weight: 700;
-    }
+		&__cityName {
+			margin-top: 10px;
+			margin-bottom: 30px;
+			font-weight: 700;
+		}
 
-    &__temperature {
-      margin-left: 15px;
-      font-size: xx-large;
-      font-weight: 1000;
-    }
+		&__temperature {
+			font-size: xx-large;
+			font-weight: 1000;
+		}
 
-    &__weatherIcon {
-      max-width: 120px;
-      img {
-        width: 100%;
-        height: 80px;
-      }
-    }
-  }
+		&__weatherIcon {
+			max-width: 120px;
+			img {
+				width: 100%;
+				height: 80px;
+			}
+		}
+	}
 
-  .infoIcons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 10px;
-    margin-bottom: 20px;
+	.infoIcons {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		margin-top: 10px;
+		margin-bottom: 20px;
 
-    img {
-      width: 25px;
-      height: 25px;
-    }
+		img {
+			width: 25px;
+			height: 25px;
+		}
 
-    &__item {
-      display: flex;
-      border-radius: 20px;
-      padding: 8px;
-      &--red {
-        background-color: lightblue;
-      }
+		&__item {
+			display: flex;
+			border-radius: 20px;
+			padding: 8px;
+			&--red {
+				background-color: lightblue;
+			}
 
-      &--blue {
-        background-color: coral;
-      }
+			&--blue {
+				background-color: coral;
+			}
 
-      &--yellow {
-        background-color: yellow;
-      }
-    }
-    // &__rainChance {
-    //   color: blue;
-    //   background-color: lightblue;
-    //   border-radius: 13px;
-    //   height: 29px;
-    // }
+			&--yellow {
+				background-color: yellow;
+			}
+		}
+		// &__rainChance {
+		//   color: blue;
+		//   background-color: lightblue;
+		//   border-radius: 13px;
+		//   height: 29px;
+		// }
 
-    // &__humidityPercentage {
-    //   color: red;
-    //   background-color: lightcoral;
-    //   border-radius: 13px;
-    //   height: 29px;
-    //   display: flex;
-    //   font-size: large;
-    // }
+		// &__humidityPercentage {
+		//   color: red;
+		//   background-color: lightcoral;
+		//   border-radius: 13px;
+		//   height: 29px;
+		//   display: flex;
+		//   font-size: large;
+		// }
 
-    // &__windSpeed {
-    //   color: darkorchid;
-    //   background-color: lightpink;
-    //   border-radius: 13px;
-    //   height: 29px;
-    //   display: flex;
-    //   text-align: center;
-    //   font-size: large;
-    // }
-  }
+		// &__windSpeed {
+		//   color: darkorchid;
+		//   background-color: lightpink;
+		//   border-radius: 13px;
+		//   height: 29px;
+		//   display: flex;
+		//   text-align: center;
+		//   font-size: large;
+		// }
+	}
 }

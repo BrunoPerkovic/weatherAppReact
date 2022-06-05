@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Conditions from "../Conditions/Conditions";
-import Card from "../Card/Card";
-import ViewStats from "../ViewStats/ViewStats";
+import WeatherCard from "../WeatherCard/WeatherCard";
 import { useMediaQuery } from "react-responsive";
-import "./NasSwiper.scss";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 import axios from "axios";
@@ -175,7 +172,7 @@ const NasSwiper = () => {
 	return (
 		<div className="Swiper">
 			<Swiper
-				slidesPerView={isDesktopOrLaptop ? 6 : 2}
+				slidesPerView={isDesktopOrLaptop ? 6 : 1.8}
 				centeredSlides={true}
 				onSlideChange={() => console.log("slide change")}
 				onSwiper={(swiper) => console.log(swiper)}
@@ -199,21 +196,20 @@ const NasSwiper = () => {
 							i
 						) => (
 							<SwiperSlide key={location}>
-								{/* {setWeatherIcons(currentClouds)} */}
 								<WeatherIcon weatherIcon={weatherObject[currentClouds]} />
-								<Card
+								<WeatherCard
 									{...{
 										location,
 										currentTemperature,
 										currentWinds,
 										currentClouds,
 										timeAndDay,
+										currentPressure,
+										windSpeed,
+										humidityPercentage,
 									}}
 								/>
-								<ViewStats />
-								<Conditions
-									{...{ currentPressure, windSpeed, humidityPercentage }}
-								/>
+
 							</SwiperSlide>
 						)
 					)}

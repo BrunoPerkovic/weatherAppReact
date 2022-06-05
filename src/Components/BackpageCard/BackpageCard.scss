@@ -1,38 +1,46 @@
 .backpageCards {
-  display: flex;
-  flex-direction: row;
-  margin-top: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 40px;
-  justify-content: space-between;
-  height: 100px;
+	display: flex;
+	flex-direction: row;
+	margin-top: 70px;
+	margin-bottom: 40px;
+	justify-content: space-between;
+	margin-left: -10px;
+	margin-right: -10px;
 
-  &__info {
-    background-color: white;
-    border-radius: 30px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-      0 100px 80px rgba(0, 0, 0, 0.12);
-    width: 100px;
-  }
+	&__info {
+		background-color: white;
+		border-radius: 30px;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		box-shadow: 0 16px 12px -5px rgba(0, 0, 0, 0.1);
+		flex-grow: 1;
+		margin: 0 10px;
+		padding-bottom: 20px;
+	}
 
-  &__temp {
-    position: relative;
-    bottom: 15px;
-  }
+	&__temp {
+		font-size: 32px;
+		display: flex;
+		font-weight: bold;
+		span {
+			font-size: 14px;
+		}
+	}
 
-  &__icons {
-    position: relative;
-    bottom: 30px;
-    img {
-      width: 50px;
-      height: 50px;
-    }
-  }
+	&__time {
+		font-size: 14px;
+		margin-top: 5px;
+		color: #999;
+		font-weight: bold;
+	}
+
+	&__icons {
+		transform: translateY(-20px);
+		img {
+			width: 50px;
+			height: 50px;
+		}
+	}
 }
