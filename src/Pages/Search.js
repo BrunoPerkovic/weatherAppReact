@@ -34,7 +34,6 @@ const Search = () => {
   };
 
   const handleBookmark = (bookmarkData) => {
-    //console.log([...locationArray, bookmarkData]);
     setLocationArray([...locationArray, bookmarkData]);
   };
 
@@ -46,6 +45,7 @@ const Search = () => {
           type="text"
           placeholder="Enter Location Here"
           onKeyUp={searchLocation}
+          value={location}
           onChange={(e) => {
             setLocation(e.target.value);
           }}
