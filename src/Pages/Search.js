@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Settings from "../Components/Settings/Settings";
 import { ReactComponent as BookmarkIcon } from "../Components/Navbar/navbar-icons/bookmark-white.svg";
+import { ReactComponent as HumidityIcon } from "../assets/images/humidity.svg";
+import { ReactComponent as WindSpeedIcon } from "../assets/images/windSpeed.svg";
+import { ReactComponent as TemperatureIcon } from "../assets/images/thermometer.svg";
+
+import "./Search.scss";
 
 const Search = () => {
   const [data, setData] = useState({});
@@ -64,7 +69,7 @@ const Search = () => {
                 console.log(locationArray);
               }}
             >
-              <BookmarkIcon />
+              {data.name ? <BookmarkIcon /> : null}
             </button>
           </div>
         </div>
@@ -81,24 +86,40 @@ const Search = () => {
 
         {data.name !== undefined && (
           <div className="bottom">
-            <div className="feels">
-              <div>TU ce ic slika termostata</div>
+            <div className="weatherInformation">
+              <div className="weatherInformation__image">
+                <TemperatureIcon />
+              </div>
               {data.main ? (
-                <p className="bold">{data.main.feels_like.toFixed()}°C</p>
+                <p className="weatherInformation_prop">
+                  {data.main.feels_like.toFixed()}°C
+                </p>
               ) : null}
-              <p>Feels Like</p>
+              <p className="weatherInformation__text">Feels Like</p>
             </div>
-            <div className="humidity">
-              <div>Tu ce ic slika za vlagu</div>
-              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
-              <p>Humidity</p>
+
+            <div className="weatherInformation">
+              <div className="weatherInformation__image">
+                <HumidityIcon />
+              </div>
+              {data.main ? (
+                <p className="weatherInformation__prop">
+                  {data.main.humidity}%
+                </p>
+              ) : null}
+              <p className="weatherInformation__text">Humidity</p>
             </div>
-            <div className="wind">
-              <div> tu ce ic slika za brzinu vitra </div>
+
+            <div className="weatherInformation">
+              <div className="weatherInformation__image">
+                <WindSpeedIcon />
+              </div>
               {data.wind ? (
-                <p className="bold">{data.wind.speed.toFixed()} KM/H</p>
+                <p className="weatherInformation__prop">
+                  {data.wind.speed.toFixed()} KM/H
+                </p>
               ) : null}
-              <p>Wind Speed</p>
+              <p className="weatherInformation__text">Wind Speed</p>
             </div>
           </div>
         )}

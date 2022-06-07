@@ -1,14 +1,13 @@
 import React from "react";
 import "./Settings.scss";
-const Settings = () => {
-	return (
-		<img
-			className="settings"
-			src="https://cdn-icons-png.flaticon.com/512/3524/3524636.png"
-			alt="settings icon"
-		/>
+import { ReactComponent as SettingsIcon } from "./setting.svg";
 
-	);
+const Settings = () => {
+  return (
+    <div className="settings">
+      <SettingsIcon />
+    </div>
+  );
 };
 
 export default Settings;

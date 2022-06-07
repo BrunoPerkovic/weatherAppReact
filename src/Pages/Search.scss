@@ -1,0 +1,64 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background: rgb(36, 0, 26);
+  background: linear-gradient(
+    90deg,
+    rgba(36, 0, 26, 1) 0%,
+    rgba(191, 193, 56, 1) 35%,
+    rgba(0, 212, 255, 0.8687850140056023) 100%
+  );
+
+  .searchBar {
+    background-color: rgba(0, 0, 0, 0.602);
+    border: 2px;
+    border-color: rgba(186, 4, 4, 0.898);
+  }
+
+  .container {
+    .top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bookmarkLocation {
+    }
+
+    .middle {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .weatherInformation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &__image {
+        }
+
+        &__prop {
+        }
+
+        &__text {
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+}
