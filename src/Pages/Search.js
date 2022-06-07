@@ -28,9 +28,9 @@ const Search = () => {
     setLocation("");
   };
 
-  const handleBookmark = () => {
-    setLocationArray(locationArray.push(data));
-    console.log(locationArray);
+  const handleBookmark = (bookmarkData) => {
+    //console.log([...locationArray, bookmarkData]);
+    setLocationArray([...locationArray, bookmarkData]);
   };
 
   return (
@@ -59,7 +59,9 @@ const Search = () => {
           <div className="bookmarkLocation">
             <button
               onClick={() => {
-                handleBookmark();
+                handleBookmark(data);
+                console.log(data);
+                console.log(locationArray);
               }}
             >
               <BookmarkIcon />

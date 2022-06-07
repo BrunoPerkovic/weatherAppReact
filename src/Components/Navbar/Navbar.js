@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      {navItems.map((navItem) => {
+      {navItems.map((navItem, i) => {
         return (
           <button
             className={`navbar__item ${
@@ -41,6 +41,7 @@ const Navbar = () => {
             onClick={() => {
               setActiveIcon(navItem.label);
             }}
+            key={i}
           >
             <span>{navItem.label}</span>
             {navItem.icon}
