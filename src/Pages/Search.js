@@ -6,13 +6,11 @@ import { ReactComponent as BookmarkIcon } from "../Components/Navbar/navbar-icon
 import { ReactComponent as HumidityIcon } from "../assets/images/humidity.svg";
 import { ReactComponent as WindSpeedIcon } from "../assets/images/windSpeed.svg";
 import { ReactComponent as TemperatureIcon } from "../assets/images/thermometer.svg";
-
 import "./Search.scss";
 
-const Search = () => {
+const Search = ({ locationArray, setLocationArray }) => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-  const [locationArray, setLocationArray] = useState([]);
 
   const myapi = "3b73ba60020b3ca9b6ba259cf70a6931";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${myapi}`;
