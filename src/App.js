@@ -1,11 +1,11 @@
 import "../src/App.scss";
-import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Overview from "./Pages/Overview";
 import DetailWeather from "./Pages/DetailWeather";
 import Bookmark from "./Pages/Bookmark";
 import Search from "./Pages/Search";
 import Profile from "./Pages/Profile";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function App() {
   const [locationArray, setLocationArray] = useState([]);
