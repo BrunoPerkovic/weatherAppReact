@@ -107,10 +107,10 @@ const initialCityData = [
 var myapi = "3b73ba60020b3ca9b6ba259cf70a6931";
 
 const NasSwiper = ({ locationArray, setLocationArray }) => {
-  const [cities, setCities] = useState([]);
-  const currentLocation = "Split";
+  /*   const [cities, setCities] = useState([]);
+  const currentLocation = "Split"; */
 
-  useEffect(() => {
+  /* useEffect(() => {
     Promise.all(
       initialCityData.map((city) =>
         axios.get(
@@ -141,6 +141,10 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
     });
   }, [cities, locationArray]);
 
+ 
+  });
+ */
+
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1024px)",
   });
@@ -155,37 +159,24 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
         loop={true}
         rebuildOnUpdate={true}
       >
-        {cities.map(
-          (
-            {
-              location,
-              currentTemperature,
-              currentWinds,
-              currentClouds,
-              timeAndDay,
-              currentPressure,
-              windSpeed,
-              humidityPercentage,
-            },
-            i
-          ) => (
+        {locationArray.map((location, i) => {
+          return (
             <SwiperSlide key={location}>
-              <WeatherIcon weatherIcon={weatherObject[currentClouds]} />
+              <WeatherIcon
+                weatherIcon={weatherObject[location.weather[0].description]}
+              />
               <WeatherCard
-                {...{
-                  location,
-                  currentTemperature,
-                  currentWinds,
-                  currentClouds,
-                  timeAndDay,
-                  currentPressure,
-                  windSpeed,
-                  humidityPercentage,
-                }}
+                location={location.name}
+                currentTemperature={location.main.temp.toFixed()}
+                currentWinds={location.wind.speed}
+                currentClouds={location.main.description}
+                currentPressure={location.main.pressure}
+                windSpeed={location.wind.speed}
+                humidityPercentage={location.main.humidity}
               />
             </SwiperSlide>
-          )
-        )}
+          );
+        })}
       </Swiper>
     </div>
   );
