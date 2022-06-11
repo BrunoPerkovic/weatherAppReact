@@ -6,14 +6,9 @@
   height: 100vh;
   width: 100%;
   background: rgb(36, 0, 26);
-  background: linear-gradient(
-    90deg,
-    rgba(36, 0, 26, 1) 0%,
-    rgba(191, 193, 56, 1) 35%,
-    rgba(0, 212, 255, 0.8687850140056023) 100%
-  );
+  background-image: linear-gradient(#e75481, #929cde);
   position: fixed;
-  color: antiquewhite;
+  color: lightgray;
 
   .searchBar {
     background-color: rgba(0, 0, 0, 0.602);
