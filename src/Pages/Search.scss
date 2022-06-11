@@ -18,9 +18,12 @@
     background-color: rgba(0, 0, 0, 0.602);
     border: 2px;
     border-color: rgba(186, 4, 4, 0.898);
+    position: absolute;
+    top: 20%;
   }
 
   .container {
+    position: absolute;
     .top {
       display: flex;
       flex-direction: row;

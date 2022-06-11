@@ -4,9 +4,7 @@ import "swiper/css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import { useMediaQuery } from "react-responsive";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
-
 import axios from "axios";
-
 import brokenClouds from "../WeatherIcon/brokenClouds.png";
 import clearSky from "../WeatherIcon/clearSky.png";
 import dust from "../WeatherIcon/dust.png";
@@ -107,44 +105,6 @@ const initialCityData = [
 var myapi = "3b73ba60020b3ca9b6ba259cf70a6931";
 
 const NasSwiper = ({ locationArray, setLocationArray }) => {
-  /*   const [cities, setCities] = useState([]);
-  const currentLocation = "Split"; */
-
-  /* useEffect(() => {
-    Promise.all(
-      initialCityData.map((city) =>
-        axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${currentLocation}&units=metric&appid=${myapi}`
-        )
-      )
-    ).then((values) => {
-      setCities(
-        values.map((value) => {
-          const date = new Date(value.data.dt * 1000);
-          const day = dayNames[date.getDay()];
-          const hours = date.getHours();
-
-          return {
-            location: value.data.name,
-            currentTemperature: value.data.main.temp.toFixed(),
-            currentWinds: value.data.wind.speed,
-            currentClouds: value.data.weather[0].description,
-            timeAndDay: `${day}, ${hours}sati`,
-            windSpeed: value.data.wind.speed,
-            humidityPercentage: value.data.main.humidity,
-            currentPressure: value.data.main.pressure,
-          };
-        }),
-        ...locationArray
-      );
-      console.log(cities);
-    });
-  }, [cities, locationArray]);
-
- 
-  });
- */
-
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1024px)",
   });
@@ -161,7 +121,7 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
       >
         {locationArray.map((location, i) => {
           return (
-            <SwiperSlide key={location}>
+            <SwiperSlide key={i}>
               <WeatherIcon
                 weatherIcon={weatherObject[location.weather[0].description]}
               />
