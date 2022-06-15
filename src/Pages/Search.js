@@ -32,7 +32,10 @@ const Search = ({ locationArray, setLocationArray }) => {
   };
 
   const handleBookmark = (bookmarkData) => {
-    setLocationArray([...locationArray, bookmarkData]);
+    if (locationArray.indexOf(bookmarkData) === -1) {
+      setLocationArray([...locationArray, bookmarkData]);
+    }
+    console.log("ovo je bookmark data: ", bookmarkData);
   };
 
   return (
