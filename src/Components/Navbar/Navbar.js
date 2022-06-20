@@ -5,62 +5,53 @@ import { ReactComponent as HomeIcon } from "./navbar-icons/home.svg";
 import { ReactComponent as SearchIcon } from "./navbar-icons/search.svg";
 import { ReactComponent as BookmarkIcon } from "./navbar-icons/bookmark-white.svg";
 import { ReactComponent as ProfileIcon } from "./navbar-icons/user.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [activeIcon, setActiveIcon] = useState("Home");
 
   const navItems = [
     {
+      route: "",
       label: "Home",
-      icon: (
-        <Link to={"/"}>
-          <HomeIcon />,
-        </Link>
-      ),
+      icon: <HomeIcon />,
     },
     {
+      route: "Search",
       label: "Search",
-      icon: (
-        <Link to={"/Search"}>
-          <SearchIcon />,
-        </Link>
-      ),
+      icon: <SearchIcon />,
     },
     {
+      route: "Bookmark",
       label: "Bookmark",
-      icon: (
-        <Link to={"/Bookmark"}>
-          <BookmarkIcon />,
-        </Link>
-      ),
+      icon: <BookmarkIcon />,
     },
     {
+      route: "Profile",
       label: "Profile",
-      icon: (
-        <Link to={"/Profile"}>
-          <ProfileIcon />,
-        </Link>
-      ),
+      icon: <ProfileIcon />,
     },
   ];
 
   return (
     <div className="navbar">
-      {navItems.map((navItem, i) => {
+      {navItems.map((navItem) => {
         return (
-          <button
-            className={`navbar__item ${
-              activeIcon === navItem.label ? "navbar__item--active" : ""
-            }`}
+          <NavLink
+            to={`/${navItem.route}`}
+            className={
+              activeIcon === navItem.label
+                ? "navbar__item navbar__item--active"
+                : "navbar__item"
+            }
+            key={navItem.label}
             onClick={() => {
               setActiveIcon(navItem.label);
             }}
-            key={i}
           >
-            <span>{navItem.label}</span>
             {navItem.icon}
-          </button>
+            <span>{navItem.label}</span>
+          </NavLink>
         );
       })}
     </div>
