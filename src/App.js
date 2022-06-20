@@ -24,7 +24,7 @@ function App() {
         />
         <Route path="/details" element={<DetailWeather />} />
         <Route
-          path="/search"
+          path="/Search"
           element={
             <Search
               locationArray={locationArray}
@@ -33,7 +33,7 @@ function App() {
           }
         />
         <Route
-          path="/bookmark"
+          path="/Bookmark"
           element={
             <Bookmark
               locationArray={locationArray}
@@ -41,7 +41,7 @@ function App() {
             />
           }
         />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/Profile" element={<Profile />} />
       </Routes>
     </div>
   );

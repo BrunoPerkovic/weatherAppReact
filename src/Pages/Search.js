@@ -20,9 +20,7 @@ const Search = ({ locationArray, setLocationArray }) => {
     if (e.key === "Enter") {
       axios.get(url).then((response) => {
         setData(response.data);
-        console.log(response.data);
       });
-      console.log(location);
       setLocation("");
     }
   };
@@ -31,12 +29,23 @@ const Search = ({ locationArray, setLocationArray }) => {
     setLocation("");
   };
 
-  const handleBookmark = (bookmarkData) => {
-    if (locationArray.indexOf(bookmarkData) === -1) {
-      setLocationArray([...locationArray, bookmarkData]);
-    }
-    console.log("ovo je bookmark data: ", bookmarkData);
+  const handleBookmark = (bookmarkData, locationArray) => {
+    setLocationArray(filterArray(locationArray, bookmarkData));
   };
+
+  function filterArray(array, location) {
+    let filtered = array.filter((arrayLocation) => {
+      if (arrayLocation.name === location.name) {
+        return arrayLocation;
+      }
+    });
+
+    if (filtered.length === 0) {
+      return [...array, location];
+    } else {
+      return array;
+    }
+  }
 
   return (
     <div className="search">
@@ -65,7 +74,7 @@ const Search = ({ locationArray, setLocationArray }) => {
           <div className="bookmarkLocation">
             <button
               onClick={() => {
-                handleBookmark(data);
+                handleBookmark(data, locationArray);
                 console.log(data);
                 console.log(locationArray);
               }}

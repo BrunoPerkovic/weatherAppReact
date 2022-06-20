@@ -1,12 +1,21 @@
 import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Settings from "../Components/Settings/Settings";
+import "./Profile.scss";
 
 const Profile = () => {
   return (
-    <div>
+    <div className="profile">
       <Settings />
-      <div>U ovu komponentu ide struktura za profil</div>
+      <div className="profileMenu">
+        <div className="profleMenu__item">First Name</div>
+
+        <div className="profleMenu__item">Last Name</div>
+
+        <div className="profleMenu__item">Email</div>
+
+        <div className="profleMenu__item">Payments</div>
+      </div>
       <Navbar />
     </div>
   );
