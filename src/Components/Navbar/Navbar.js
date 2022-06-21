@@ -8,8 +8,6 @@ import { ReactComponent as ProfileIcon } from "./navbar-icons/user.svg";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [activeIcon, setActiveIcon] = useState("Home");
-
   const navItems = [
     {
       route: "",
@@ -43,9 +41,6 @@ const Navbar = () => {
               isActive ? "navbar__item navbar__item--active" : "navbar__item"
             }
             key={navItem.label}
-            onClick={() => {
-              setActiveIcon(navItem.label);
-            }}
           >
             {navItem.icon}
             <span>{navItem.label}</span>
