@@ -120,7 +120,7 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
                 location={location.name}
                 currentTemperature={location.main.temp.toFixed()}
                 currentWinds={location.wind.speed}
-                currentClouds={location.main.description}
+                currentClouds={location.weather[0].description}
                 currentPressure={location.main.pressure}
                 windSpeed={location.wind.speed}
                 humidityPercentage={location.main.humidity}
