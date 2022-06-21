@@ -39,10 +39,8 @@ const Navbar = () => {
         return (
           <NavLink
             to={`/${navItem.route}`}
-            className={
-              activeIcon === navItem.label
-                ? "navbar__item navbar__item--active"
-                : "navbar__item"
+            className={({ isActive }) =>
+              isActive ? "navbar__item navbar__item--active" : "navbar__item"
             }
             key={navItem.label}
             onClick={() => {

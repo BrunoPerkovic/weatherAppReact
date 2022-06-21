@@ -94,16 +94,6 @@ const weatherObject = {
   "overcast clouds": overcast,
 };
 
-const initialCityData = [
-  {
-    location: "Split, Croatia",
-    lon: 16.440193,
-    lat: 43.508133,
-  },
-];
-
-var myapi = "3b73ba60020b3ca9b6ba259cf70a6931";
-
 const NasSwiper = ({ locationArray, setLocationArray }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1024px)",
