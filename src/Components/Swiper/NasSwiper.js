@@ -5,6 +5,7 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import { useMediaQuery } from "react-responsive";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import axios from "axios";
+import Constants from "srcassetsConstants.js";
 
 import brokenClouds from "../WeatherIcon/brokenClouds.png";
 import clearSky from "../WeatherIcon/clearSky.png";
