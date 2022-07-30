@@ -1,4 +1,4 @@
-import brokenClouds from "../Components/WeatherIcon/brokenClouds.jpg";
+import brokenClouds from "../Components/WeatherIcon/brokenClouds.png";
 import clearSky from "../Components/WeatherIcon/clearSky.png";
 import dust from "../Components/WeatherIcon/dust.png";
 import fewClouds from "../Components/WeatherIcon/fewClouds.png";
@@ -301,7 +301,7 @@ export const THUNDERSTORM_WITH_HEAVY_RAIN = {
   image: thunhevdriz,
 };
 
-const BIGOBJECT = {
+export const BIGOBJECT = {
   "thunderstorm with rain": THUNDERSTORM_WITH_RAIN,
   "overcast clouds": OVERCAST_CLOUDS,
   "broken clouds": BROKEN_CLOUDS,
@@ -346,14 +346,14 @@ const BIGOBJECT = {
   "drizzle rain": DRIZZLE_RAIN,
   "light itensity drizzle rain": LIGHT_ITENSITY_DRIZZLE_RAIN,
   "heavy itensity drizzle": HEAVY_ITENSTIY_DRIZZLE,
-  "drizzle": DRIZZLE,
+  drizzle: DRIZZLE,
   "light itensity drizzle": LIGHT_ITENSITY_DRIZZLE,
   "thunderstorm with heavy drizzle": THUNDERSTORM_WITH_HEAVY_DRIZZLE,
   "thunderstorm with drizzle": THUNDERSTORM_WITH_DRIZZLE,
   "thunderstorm with light drizzle": THUNDERSTORM_WITH_LIGHT_DRIZZLE,
   "ragged thunderstorm": RAGGED_THUNDERSTORM,
   "heavy thunderstorm": HEAVY_THUNDERSTORM,
-  "thunderstorm": THUNDERSTORM,
+  thunderstorm: THUNDERSTORM,
   "light thunderstorm": LIGHT_THUNDERSTORM,
   "thunderstorm with heavy rain": THUNDERSTORM_WITH_HEAVY_RAIN,
 };

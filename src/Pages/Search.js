@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Settings from "../Components/Settings/Settings";
-import { ReactComponent as BookmarkIcon } from "../Components/Navbar/navbar-icons/bookmark-white.svg";
 import { ReactComponent as HumidityIcon } from "../assets/images/humidity.svg";
 import { ReactComponent as WindSpeedIcon } from "../assets/images/windSpeed.svg";
 import { ReactComponent as TemperatureIcon } from "../assets/images/thermometer.svg";
@@ -15,6 +14,21 @@ const Search = ({ locationArray, setLocationArray }) => {
   const myapi = "3b73ba60020b3ca9b6ba259cf70a6931";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${myapi}`;
   const shouldDisplayButton = location.length > 0;
+
+  const buttonStyleInvisible = {
+    visibility: "hidden",
+  };
+
+  const buttonStyleVisible = {
+    backgroundColor: "transparent",
+    color: "white",
+    textAlign: "center",
+    padding: "10px",
+    borderRadius: "15px",
+    borderStyle: "solid",
+    borderWidth: "medium",
+    borderColor: "lightgray",
+  };
 
   const searchLocation = (e) => {
     if (e.key === "Enter") {
@@ -73,13 +87,14 @@ const Search = ({ locationArray, setLocationArray }) => {
 
           <div className="bookmarkLocation">
             <button
+              style={!data.name ? buttonStyleInvisible : buttonStyleVisible}
               onClick={() => {
                 handleBookmark(data, locationArray);
                 console.log(data);
                 console.log(locationArray);
               }}
             >
-              {data.name ? <BookmarkIcon /> : null}
+              {data.name ? "Bookmark" : null}
             </button>
           </div>
         </div>
