@@ -11,11 +11,14 @@
   color: lightgray;
 
   .searchBar {
-    background-color: rgba(0, 0, 0, 0.602);
-    border: 2px;
-    border-color: rgba(186, 4, 4, 0.898);
     position: absolute;
     top: 20%;
+
+    input {
+      border-radius: 30px;
+      text-align: center;
+      padding: 5px;
+    }
   }
 
   .container {

@@ -2,19 +2,35 @@ import React from "react";
 import "./WeatherCard.scss";
 import Conditions from "../Conditions/Conditions";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 /* import WeatherIcon from "../WeatherIcon/WeatherIcon";
  */ const WeatherCard = ({
   location,
   currentTemperature,
   currentPressure,
-  celsisus,
   windSpeed,
   humidityPercentage,
   currentWinds,
   currentClouds,
   timeAndDay,
 }) => {
+  const KEY = "0376d687be89404d9d33122928edc567";
+  const lokacija = "šibenik";
+  const URL = `https://api.geoapify.com/v1/geocode/search?text=${lokacija}&apiKey=${KEY}`;
+  function translateCoordinates() {
+    axios
+      .get(URL)
+      .then((response) => {
+        console.log("ovo je response", response.features);
+      })
+      .catch((error) => console.log(error));
+  }
   const navigate = useNavigate();
+  const getDetailWeather = () => {
+    navigate("/details");
+    translateCoordinates();
+  };
 
   return (
     <>
@@ -36,7 +52,7 @@ import { useNavigate } from "react-router-dom";
       </div>
       <button
         className="weatherCard__button button"
-        onClick={() => navigate("/details")}
+        onClick={() => navigate("/Details")}
       >
         View stats
       </button>

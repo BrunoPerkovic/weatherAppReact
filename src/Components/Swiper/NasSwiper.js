@@ -20,7 +20,7 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         loop={true}
-        rebuildOnUpdate={true}
+        rebuildonupdate="true"
       >
         {locationArray.map((location, i) => {
           return (
