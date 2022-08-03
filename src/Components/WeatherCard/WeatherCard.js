@@ -14,10 +14,15 @@ import axios from "axios";
   currentWinds,
   currentClouds,
   timeAndDay,
+  country,
+  maxTemp,
+  minTemp,
+  //latitude,
+  //longitude,
 }) => {
   const KEY = "0376d687be89404d9d33122928edc567";
   const lokacija = "šibenik";
-  const URL = `https://api.geoapify.com/v1/geocode/search?text=${lokacija}&apiKey=${KEY}`;
+  //const URL = `https://api.geoapify.com/v1/geocode/search?lat=${latitude}&lon=${longitude}&apiKey=${KEY}`;
   function translateCoordinates() {
     axios
       .get(URL)
@@ -28,8 +33,21 @@ import axios from "axios";
   }
   const navigate = useNavigate();
   const getDetailWeather = () => {
-    navigate("/details");
-    translateCoordinates();
+    navigate("/Details", {
+      state: {
+        location: location,
+        temperature: currentTemperature,
+        pressure: currentPressure,
+        windSpeed: windSpeed,
+        wind: currentWinds,
+        clouds: currentClouds,
+        country: country,
+        humidity: humidityPercentage,
+        maxTemp: maxTemp,
+        minTemp: minTemp,
+      },
+    });
+    // translateCoordinates();
   };
 
   return (
@@ -52,7 +70,7 @@ import axios from "axios";
       </div>
       <button
         className="weatherCard__button button"
-        onClick={() => navigate("/Details")}
+        onClick={() => getDetailWeather()}
       >
         View stats
       </button>

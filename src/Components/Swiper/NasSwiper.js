@@ -34,6 +34,9 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
                 currentPressure={location.main.pressure}
                 windSpeed={location.wind.speed}
                 humidityPercentage={location.main.humidity}
+                country={location.sys.country}
+                maxTemp={location.main["temp_max"]}
+                minTemp={location.main["min"]}
               />
             </SwiperSlide>
           );

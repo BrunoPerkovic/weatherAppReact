@@ -6,7 +6,7 @@ const ThreeDaysForecast = ({ nameDay, weatherIcon, maxTemp, minTemp }) => {
     <div className="forecast">
       <div className="forecast__row">
         <div className="forecast__days">
-          <div>Monday {nameDay} </div>
+          <div>{nameDay}</div>
         </div>
 
         <div className="forecast__icons">
@@ -19,14 +19,14 @@ const ThreeDaysForecast = ({ nameDay, weatherIcon, maxTemp, minTemp }) => {
 
         <div className="forecast__temps">
           <div>
-            15°C{maxTemp} 10°C{minTemp}
+            Max:{maxTemp} Min:{minTemp}{" "}
           </div>
         </div>
       </div>
 
       <div className="forecast__row">
         <div className="forecast__days">
-          <div>Tuesday {nameDay} </div>
+          <div>{nameDay} </div>
         </div>
 
         <div className="forecast__icons">
@@ -39,14 +39,14 @@ const ThreeDaysForecast = ({ nameDay, weatherIcon, maxTemp, minTemp }) => {
 
         <div className="forecast__temps">
           <div>
-            15°C{maxTemp} 10°C{minTemp}
+            Max:{maxTemp} Min:{minTemp}{" "}
           </div>
         </div>
       </div>
 
       <div className="forecast__row">
         <div className="forecast__days">
-          <div>Wednesday {nameDay} </div>
+          <div> {nameDay} </div>
         </div>
 
         <div className="forecast__icons">
@@ -59,10 +59,9 @@ const ThreeDaysForecast = ({ nameDay, weatherIcon, maxTemp, minTemp }) => {
 
         <div className="forecast__temps">
           <div>
-            15°C{maxTemp} 10°C{minTemp}
+            Max:{maxTemp} Min:{minTemp}{" "}
           </div>
         </div>
-
       </div>
     </div>
   );

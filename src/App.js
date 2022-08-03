@@ -24,7 +24,12 @@ function App() {
         />
         <Route
           path="/Details"
-          element={<DetailWeather location={locationArray} />}
+          element={
+            <DetailWeather
+              locationArray={locationArray}
+              setLocationArray={setLocationArray}
+            />
+          }
         />
         <Route
           path="/Search"
