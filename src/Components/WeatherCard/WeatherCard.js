@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./WeatherCard.scss";
 import Conditions from "../Conditions/Conditions";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-/* import WeatherIcon from "../WeatherIcon/WeatherIcon";
- */ const WeatherCard = ({
+const WeatherCard = ({
   location,
   currentTemperature,
   currentPressure,
@@ -17,37 +16,51 @@ import axios from "axios";
   country,
   maxTemp,
   minTemp,
-  //latitude,
-  //longitude,
+  latitude,
+  longitude,
 }) => {
-  const KEY = "0376d687be89404d9d33122928edc567";
-  const lokacija = "šibenik";
-  //const URL = `https://api.geoapify.com/v1/geocode/search?lat=${latitude}&lon=${longitude}&apiKey=${KEY}`;
-  function translateCoordinates() {
-    axios
-      .get(URL)
-      .then((response) => {
-        console.log("ovo je response", response.features);
-      })
-      .catch((error) => console.log(error));
-  }
+  const [detailedData, setDetailedData] = useState({});
+  console.log("ovo je detailed data", detailedData);
+  const { current, hourly, daily } = detailedData;
+
+  const KEY = "3b73ba60020b3ca9b6ba259cf70a6931";
+  const detailedURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${KEY}`;
+
   const navigate = useNavigate();
   const getDetailWeather = () => {
-    navigate("/Details", {
-      state: {
-        location: location,
-        temperature: currentTemperature,
-        pressure: currentPressure,
-        windSpeed: windSpeed,
-        wind: currentWinds,
-        clouds: currentClouds,
-        country: country,
-        humidity: humidityPercentage,
-        maxTemp: maxTemp,
-        minTemp: minTemp,
-      },
+    axios.get(detailedURL).then((detailedResponse) => {
+      console.log("ovo je detailed Response:", detailedResponse);
+      setDetailedData(detailedResponse.data);
+      navigate("/Details", {
+        state: {
+          currentData: detailedResponse.data.current,
+          dailyData: detailedResponse.data.daily,
+          hourlyData: detailedResponse.data.hourly,
+          country: country,
+          location: location,
+          currentTemperature: currentTemperature,
+          currentPressure: currentPressure,
+          windSpeed: windSpeed,
+          currentHumidity: humidityPercentage,
+        },
+      });
     });
-    // translateCoordinates();
+
+    /* navigate("/Details", {
+      state: {
+        currentData: current,
+        dailyData: daily,
+        hourlyData: hourly,
+        country: country,
+        location: location,
+        currentTemperature: currentTemperature,
+        currentPressure: currentPressure,
+        windSpeed: windSpeed,
+        currentHumidity: humidityPercentage,
+      },
+    }); */
+
+    console.log("ovo je detailed data", detailedData);
   };
 
   return (
@@ -63,7 +76,7 @@ import axios from "axios";
             <p className="weatherCard__windAndCloud--wind">
               {currentWinds} km/h{" "}
             </p>
-            <p className="weatherCard__windAndCloud--cloud">{currentClouds} </p>
+            <p className="weatherCard__windAndCloud--cloud">{currentClouds}</p>
           </div>
         </div>
         <div className="weatherCard__timeAndDay">{timeAndDay} </div>

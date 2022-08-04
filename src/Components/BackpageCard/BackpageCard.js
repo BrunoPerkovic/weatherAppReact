@@ -1,7 +1,17 @@
 import React from "react";
 import "./BackpageCard.scss";
 
-export const BackpageCard = ({ icon, temperature, time }) => {
+export const BackpageCard = ({ icon, temperatureArray, time }) => {
+  function timeConverter(UNIX_timestamp) {
+    var a = new Date(UNIX_timestamp * 1000);
+    var hour = a.getHours();
+    if (hour < 13) {
+      return `${hour} am`;
+    } else {
+      return `${hour} pm`;
+    }
+  }
+
   return (
     <div className="backpageCards">
       <div className="backpageCards__info">
@@ -15,10 +25,13 @@ export const BackpageCard = ({ icon, temperature, time }) => {
         </div>
 
         <div className="backpageCards__temp">
-          {temperature} <span>°C</span>{" "}
+          {temperatureArray[1].temp.toFixed()} <span>°C</span>{" "}
         </div>
 
-        <div className="backpageCards__time"> {time} </div>
+        <div className="backpageCards__time">
+          {" "}
+          {timeConverter(temperatureArray[1].dt)}{" "}
+        </div>
       </div>
 
       <div className="backpageCards__info">
@@ -32,11 +45,14 @@ export const BackpageCard = ({ icon, temperature, time }) => {
         </div>
 
         <div className="backpageCards__temp">
-          {temperature}
+          {temperatureArray[2].temp.toFixed()}
           <span>°C</span>{" "}
         </div>
 
-        <div className="backpageCards__time">11 am {time} </div>
+        <div className="backpageCards__time">
+          {" "}
+          {timeConverter(temperatureArray[2].dt)}{" "}
+        </div>
       </div>
 
       <div className="backpageCards__info">
@@ -50,11 +66,14 @@ export const BackpageCard = ({ icon, temperature, time }) => {
         </div>
 
         <div className="backpageCards__temp">
-          {temperature}
+          {temperatureArray[3].temp.toFixed()}
           <span>°C</span>{" "}
         </div>
 
-        <div className="backpageCards__time">{time} </div>
+        <div className="backpageCards__time">
+          {" "}
+          {timeConverter(temperatureArray[3].dt)}
+        </div>
       </div>
     </div>
   );

@@ -6,8 +6,13 @@ import Graph from "../Components/Graph/Graph";
 import InfoIcons from "../Components/InfoIcons/InfoIcons";
 import { BackpageCard } from "../Components/BackpageCard/index";
 import "./DetailWeather.scss";
-const DetailWeather = ({ locationArray, setLocationArray }) => {
+
+const DetailWeather = () => {
   const city = useLocation();
+  console.log("ovo je curr data", city.state.currentData);
+  console.log("ovo je hourly data", city.state.hourlyData);
+  console.log("ovo je daily data", city.state.dailyData);
+
   const weekday = [
     "Sunday",
     "Monday",
@@ -40,12 +45,12 @@ const DetailWeather = ({ locationArray, setLocationArray }) => {
       </div>
 
       <div className="detailWeather__temperature">
-        {city.state.temperature} <span>°C</span>
+        {city.state.currentData.temp.toFixed()} <span>°C</span>
       </div>
 
       <InfoIcons
-        humidity={city.state.humidity}
-        pressure={city.state.pressure}
+        humidity={city.state.currentHumidity}
+        pressure={city.state.currentPressure}
         wind={city.state.windSpeed}
       />
 
@@ -53,14 +58,14 @@ const DetailWeather = ({ locationArray, setLocationArray }) => {
 
       <BackpageCard
         //icon={weatherIcon}
-        temperature={city.state.temperature}
+        temperatureArray={city.state.hourlyData} // objekt
         //time={time}
       />
 
       <ThreeDaysForecast
-        nameDay={day}
-        maxTemp={city.state.maxTemp}
-        minTemp={city.state.minTemp}
+        dailyArray={city.state.dailyData}
+        //maxTemp={city.state.maxTemp}
+        //minTemp={city.state.minTemp}
       />
     </div>
   );

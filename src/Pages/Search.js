@@ -9,10 +9,11 @@ import "./Search.scss";
 
 const Search = ({ locationArray, setLocationArray }) => {
   const [data, setData] = useState({});
+  const [detailedData, setDetailedData] = useState({});
   const [location, setLocation] = useState("");
 
   const myapi = "3b73ba60020b3ca9b6ba259cf70a6931";
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${myapi}`;
+  const currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${myapi}`;
   const shouldDisplayButton = location.length > 0;
 
   const buttonStyleInvisible = {
@@ -32,13 +33,15 @@ const Search = ({ locationArray, setLocationArray }) => {
 
   const searchLocation = (e) => {
     if (e.key === "Enter") {
-      axios.get(url).then((response) => {
+      axios.get(currentURL).then((response) => {
         setData(response.data);
       });
+
       setLocation("");
     }
   };
 
+  //console.log("ovo je detailed data", detailedData);
   const handleClearClick = () => {
     setLocation("");
   };

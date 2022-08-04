@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import WeatherCard from "../WeatherCard/WeatherCard";
@@ -37,6 +37,8 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
                 country={location.sys.country}
                 maxTemp={location.main["temp_max"]}
                 minTemp={location.main["min"]}
+                latitude={location.coord.lat}
+                longitude={location.coord.lon}
               />
             </SwiperSlide>
           );
