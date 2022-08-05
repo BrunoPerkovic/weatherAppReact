@@ -1,5 +1,4 @@
 import React from "react";
-import Constants from "../../assets/Constants";
 const WeatherIcon = ({ weatherIcon }) => {
   return (
     <div className="weatherCard__icon">

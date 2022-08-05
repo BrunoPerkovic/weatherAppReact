@@ -5,26 +5,12 @@ import ThreeDaysForecast from "../Components/ThreeDaysForecast/ThreeDaysForecast
 import Graph from "../Components/Graph/Graph";
 import InfoIcons from "../Components/InfoIcons/InfoIcons";
 import { BackpageCard } from "../Components/BackpageCard/index";
+import WeatherIcon from "../Components/WeatherIcon/WeatherIcon";
+import { BIGOBJECT } from "../assets/Constants";
 import "./DetailWeather.scss";
 
 const DetailWeather = () => {
   const city = useLocation();
-  console.log("ovo je curr data", city.state.currentData);
-  console.log("ovo je hourly data", city.state.hourlyData);
-  console.log("ovo je daily data", city.state.dailyData);
-
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  const d = new Date();
-  let day = weekday[d.getDay()];
 
   return (
     <div className="detailWeather">
@@ -33,10 +19,7 @@ const DetailWeather = () => {
       </Link>
 
       <div className="detailWeather__weatherIcon">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/172/172928.png"
-          alt="weather icon"
-        />
+        <WeatherIcon weatherIcon={BIGOBJECT[city.state.description].image} />
       </div>
 
       <div className="detailWeather__cityName">
@@ -57,16 +40,10 @@ const DetailWeather = () => {
       <Graph />
 
       <BackpageCard
-        //icon={weatherIcon}
         temperatureArray={city.state.hourlyData} // objekt
-        //time={time}
       />
 
-      <ThreeDaysForecast
-        dailyArray={city.state.dailyData}
-        //maxTemp={city.state.maxTemp}
-        //minTemp={city.state.minTemp}
-      />
+      <ThreeDaysForecast dailyArray={city.state.dailyData} />
     </div>
   );
 };

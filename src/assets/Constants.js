@@ -357,5 +357,3 @@ export const BIGOBJECT = {
   "light thunderstorm": LIGHT_THUNDERSTORM,
   "thunderstorm with heavy rain": THUNDERSTORM_WITH_HEAVY_RAIN,
 };
-
-console.log(BIGOBJECT["clear sky"].image);

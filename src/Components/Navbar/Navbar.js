@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "./Navbar.scss";
 import { ReactComponent as HomeIcon } from "./navbar-icons/home.svg";
 import { ReactComponent as SearchIcon } from "./navbar-icons/search.svg";

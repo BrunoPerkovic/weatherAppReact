@@ -14,14 +14,11 @@ const WeatherCard = ({
   currentClouds,
   timeAndDay,
   country,
-  maxTemp,
-  minTemp,
+  description,
   latitude,
   longitude,
 }) => {
   const [detailedData, setDetailedData] = useState({});
-  console.log("ovo je detailed data", detailedData);
-  const { current, hourly, daily } = detailedData;
 
   const KEY = "3b73ba60020b3ca9b6ba259cf70a6931";
   const detailedURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${KEY}`;
@@ -42,25 +39,10 @@ const WeatherCard = ({
           currentPressure: currentPressure,
           windSpeed: windSpeed,
           currentHumidity: humidityPercentage,
+          description: description,
         },
       });
     });
-
-    /* navigate("/Details", {
-      state: {
-        currentData: current,
-        dailyData: daily,
-        hourlyData: hourly,
-        country: country,
-        location: location,
-        currentTemperature: currentTemperature,
-        currentPressure: currentPressure,
-        windSpeed: windSpeed,
-        currentHumidity: humidityPercentage,
-      },
-    }); */
-
-    console.log("ovo je detailed data", detailedData);
   };
 
   return (

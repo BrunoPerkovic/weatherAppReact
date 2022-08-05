@@ -1,52 +1,52 @@
 .detailWeather {
-	padding: 20px;
-	overflow: hidden;
-	width: 100%;
-	position: relative;
+  padding: 20px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 
-	&__weatherIcon {
-		width: 70%;
-		transform: translate(10%, -10%);
-		position: absolute;
-		right: 0;
-		top: 0;
+  &__weatherIcon {
+    width: 70%;
+    transform: translate(10%, -10%);
+    position: absolute;
+    right: 0;
+    top: 0;
 
-		img {
-			width: 100%;
-		}
-	}
+    img {
+      width: 100%;
+    }
+  }
 
-	&__back {
-		display: block;
-		margin: 40px 0;
-		width: 20px;
-		svg {
-			width: 100%;
-			height: auto;
-		}
-	}
+  &__back {
+    display: block;
+    margin: 40px 0;
+    width: 20px;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
 
-	&__cityName {
-		margin-bottom: 15px;
-		font-weight: 700;
-		font-size: 30px;
-		line-height: 40px;
-		color: #333;
-	}
+  &__cityName {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    color: #333;
+  }
 
-	&__temperature {
-		font-size: 80px;
-		font-weight: bold;
-		display: flex;
-		color: #333;
-		span {
-			margin-top: 12px;
-			font-size: 22px;
-		}
-	}
+  &__temperature {
+    font-size: 80px;
+    font-weight: bold;
+    display: flex;
+    color: #333;
+    span {
+      margin-top: 12px;
+      font-size: 22px;
+    }
+  }
 
-	.graph {
-		margin-left: -20px;
-		margin-right: -20px;
-	}
+  .graph {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }

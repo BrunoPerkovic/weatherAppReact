@@ -9,7 +9,6 @@ import "./Search.scss";
 
 const Search = ({ locationArray, setLocationArray }) => {
   const [data, setData] = useState({});
-  const [detailedData, setDetailedData] = useState({});
   const [location, setLocation] = useState("");
 
   const myapi = "3b73ba60020b3ca9b6ba259cf70a6931";

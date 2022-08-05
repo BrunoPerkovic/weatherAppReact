@@ -4,7 +4,7 @@ import "swiper/css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import { useMediaQuery } from "react-responsive";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
-import Constants, { BIGOBJECT } from "../../assets/Constants";
+import { BIGOBJECT } from "../../assets/Constants";
 
 const NasSwiper = ({ locationArray, setLocationArray }) => {
   const isDesktopOrLaptop = useMediaQuery({
@@ -36,10 +36,9 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
                 windSpeed={location.wind.speed}
                 humidityPercentage={location.main.humidity}
                 country={location.sys.country}
-                maxTemp={location.main["temp_max"]}
-                minTemp={location.main["min"]}
                 latitude={location.coord.lat}
                 longitude={location.coord.lon}
+                description={location.weather[0].description}
               />
             </SwiperSlide>
           );

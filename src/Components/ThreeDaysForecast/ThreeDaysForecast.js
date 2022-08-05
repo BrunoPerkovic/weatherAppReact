@@ -22,7 +22,6 @@ const ThreeDaysForecast = ({ weatherIcon, dailyArray }) => {
       return "Saturday";
     }
   }
-  console.log(timeConverter(0));
 
   return (
     <div className="forecast">
