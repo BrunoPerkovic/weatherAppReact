@@ -4,8 +4,7 @@ import "swiper/css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import { useMediaQuery } from "react-responsive";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
-//import Constants from "../../assets/Constants";
-import { BROKEN_CLOUDS } from "../../assets/Constants";
+import Constants, { BIGOBJECT } from "../../assets/Constants";
 
 const NasSwiper = ({ locationArray, setLocationArray }) => {
   const isDesktopOrLaptop = useMediaQuery({
@@ -25,7 +24,9 @@ const NasSwiper = ({ locationArray, setLocationArray }) => {
         {locationArray.map((location, i) => {
           return (
             <SwiperSlide key={i}>
-              <WeatherIcon weatherIcon={BROKEN_CLOUDS} />
+              <WeatherIcon
+                weatherIcon={BIGOBJECT[location.weather[0].description].image}
+              />
               <WeatherCard
                 location={location.name}
                 currentTemperature={location.main.temp.toFixed()}
